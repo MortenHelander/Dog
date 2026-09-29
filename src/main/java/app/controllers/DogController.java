@@ -28,4 +28,5 @@ public class DogController {
         dog = dogDAO.create(dog);
         ctx.json(dog);
     }
+
 }

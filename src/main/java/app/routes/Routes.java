@@ -16,8 +16,8 @@ public class Routes {
     public EndpointGroup getRoutes() {
         return () -> {
             get("/", ctx -> ctx.result("Hello Javalin World"));
-            path("/dog", () -> {
-                get("/all", dogController::getAll);
+            path("/dogs", () -> {
+                get("/", dogController::getAll);
                 post("/", dogController::create);
                 get("/{id}", dogController::getById);
             });

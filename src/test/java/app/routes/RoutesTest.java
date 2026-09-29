@@ -24,7 +24,7 @@ class RoutesTest {
     @BeforeAll
     static void init(){
         app = ApplicationConfig.startServer(7070, dogDAO);
-        RestAssured.baseURI =  "http://localhost:7070/dog";
+        RestAssured.baseURI =  "http://localhost:7070/dogs";
     }
 
     @BeforeEach
@@ -48,7 +48,7 @@ class RoutesTest {
         List<Dog> expected = dogDAO.getAll();
         List<Dog> actual = given()
                 .when()
-                .get("/all")
+                .get("/")
                 .then()
                 .statusCode(200)
                 .log().all()
